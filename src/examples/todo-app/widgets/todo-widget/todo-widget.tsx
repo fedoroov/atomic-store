@@ -24,7 +24,7 @@ export const TodoWidget: FC<TodoWidgetProps> = ({ className }) => {
     return (
       <div
         className={clsx(
-          "flex justify-center items-center w-full max-w-xl min-h-96 p-6 bg-white rounded-lg shadow-outside",
+          "flex justify-center items-center w-full max-w-2xl min-h-96 p-6 bg-white rounded-lg shadow-outside",
           className
         )}
       >
@@ -40,7 +40,7 @@ export const TodoWidget: FC<TodoWidgetProps> = ({ className }) => {
   return (
     <div
       className={clsx(
-        "w-full max-w-xl min-h-96 py-8 px-6 bg-white rounded-lg shadow-outside max-h-full overflow-y-auto",
+        "w-full max-w-2xl min-h-96 py-8 px-6 bg-white rounded-lg shadow-outside max-h-full overflow-y-auto",
         className
       )}
     >
