@@ -1,5 +1,6 @@
-import { atom, computed, log } from "@/packages/store/atom";
-import { __todos__ } from "./__mocks__";
+import { atom, computed, log, withLocalStorage } from "@/packages/store/atom";
+
+const TODOS_KEY = "todos";
 
 export type TPriority = "low" | "medium" | "high";
 
@@ -19,7 +20,7 @@ const sortByPriority = (todos: Todo[]) => {
   );
 };
 
-const todos = atom<Todo[]>([]);
+const todos = withLocalStorage(TODOS_KEY, atom<Todo[]>([]));
 const loading = atom(false);
 const error = atom<string | null>(null);
 const selectedTodo = atom<Todo | null>(null);
@@ -32,22 +33,8 @@ const completedTodos = computed(todos, (currentTodos) =>
   currentTodos.filter((todo) => todo.completed)
 );
 
-const fetchTodos = async () => {
-  loading.set(true);
-
-  await new Promise((resolve) => setTimeout(resolve, 1500));
-
-  try {
-    todos.set(__todos__);
-  } catch (err) {
-    error.set(err as string);
-  } finally {
-    loading.set(false);
-  }
-};
-
 todos.onMount(() => {
-  fetchTodos();
+  console.log("Todos on mount");
 });
 
 log(todos, (currentTodos) => {
