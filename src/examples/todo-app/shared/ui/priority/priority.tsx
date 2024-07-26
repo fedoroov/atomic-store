@@ -41,7 +41,7 @@ export const Priority: FC<RadioButtonsProps> = ({
   };
 
   return (
-    <div className={clsx(className, "flex items-center gap-4")}>
+    <div className={clsx(className, "flex flex-wrap items-center gap-4")}>
       {priorities.map((priority) => (
         <label key={priority.key} className="label flex items-center gap-1">
           <div className={clsx("w-8 h-4 rounded-sm", bgColors[priority.key])} />

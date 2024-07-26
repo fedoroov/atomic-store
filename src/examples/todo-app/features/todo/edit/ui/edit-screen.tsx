@@ -31,7 +31,7 @@ export const EditScreen: FC<EditScreenProps> = ({ className }) => {
     const priority = priorityRef.current ?? selectedTodo?.priority;
 
     saveTodo({
-      id: selectedTodo?.id,
+      id: selectedTodo.id,
       text,
       priority,
       description,
@@ -44,17 +44,8 @@ export const EditScreen: FC<EditScreenProps> = ({ className }) => {
     editTodo(null);
   };
 
-  if (!selectedTodo) {
-    throw new Error("Selected todo not found");
-  }
-
   return (
-    <div
-      className={clsx(
-        "flex flex-col w-full max-w-xl min-h-96 py-8 px-6 bg-white rounded-lg shadow-outside",
-        className
-      )}
-    >
+    <div className={clsx("flex flex-col w-full min-h-96", className)}>
       <div className="flex items-center justify-start gap-2">
         <button className="hover:bg-slate-100 p-2" onClick={handleBack}>
           <BackIcon className="w-5 h-5" />
