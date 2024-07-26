@@ -41,6 +41,10 @@ Open your browser and navigate to `http://localhost:5173` to see the application
 
 All examples are located in the examples folder. Feel free to check out these examples to see how the atomic store is implemented and used in different scenarios.
 
+## Demo
+
+Here's a quick demo of what the application looks like: https://fedoroov.github.io/atomic-store/
+
 ## HTML Layout
 
 The HTML layout for this project was generated using AI tools, showcasing the integration of modern technologies in the development process.
