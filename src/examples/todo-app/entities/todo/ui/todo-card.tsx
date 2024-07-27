@@ -20,7 +20,7 @@ export const TodoCard: FC<TodoCard> = ({
   return (
     <div
       className={clsx(
-        "flex justify-between items-center gap-4 py-2 min-h-16 justify-between bg-slate-100 rounded-md px-4 border-l-8",
+        "flex justify-between items-center gap-4 py-2 min-h-16 justify-between bg-slate-100 rounded-md px-4 border-l-8 dark:bg-gray-800 transition-colors",
         {
           "border-red-500": todo.priority === "high",
           "border-yellow-500": todo.priority === "medium",
@@ -32,7 +32,7 @@ export const TodoCard: FC<TodoCard> = ({
       <label className="flex items-center gap-2 cursor-pointer">
         {ToggleTodoBtn}
         <p
-          className={clsx("flex flex-col", {
+          className={clsx("flex flex-col dark:text-gray-100", {
             "line-through": todo.completed,
           })}
         >

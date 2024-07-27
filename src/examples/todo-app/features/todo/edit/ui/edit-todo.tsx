@@ -15,7 +15,7 @@ export const EditTodoBtn: FC<EditTodoProps> = ({ className, todo }) => {
   return (
     <button
       className={clsx(
-        "stroke-gray-700 hover:stroke-gray-900 transition",
+        "stroke-gray-700 hover:stroke-gray-900 transition dark:stroke-white dark:hover:stroke-slate-200",
         className
       )}
       onClick={() => editTodo(todo)}
